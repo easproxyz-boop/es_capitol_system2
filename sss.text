@@ -1,0 +1,53 @@
+/* 
+<script>
+  $(document).ready(function () {
+    function loadPageXyyc2(page) {
+      $("#main-content-9999").load(page, function (response, status, xhr) {
+        if (status === "success") {
+
+          // Clear previous active states
+          $(".nav-link-load-000, .nav-link-load-111, .nav-link-load-222").removeClass("active");
+          $(".nav-link-load-999").addClass("text-secondary").removeClass("border border-primary rounded bg-primary bg-opacity-10 p-1");
+
+
+          //run page
+          switch (page) {
+            case "/home":
+              $("#nav_es_home").addClass("active");
+              break;
+            case "/profile_information":       
+              $("#nav_es_profile_information").addClass("active");
+              break;
+            case "/account_management/useraccount_user_account":
+              $("#nav_es_accountmanegement_useraccount_user_account").addClass("border border-primary rounded bg-primary bg-opacity-10 p-1").removeClass("text-secondary");
+              break;
+            case "/account_management/useraccount_authorized_email":
+              $("#nav_es_accountmanegement_useraccount_authorized_email").addClass("border border-primary rounded bg-primary bg-opacity-10 p-1").removeClass("text-secondary");
+              break;
+              
+            case "api/html/pages/public_services/financial_assistance/es.aics.html":
+              $("#nav_es_ps").addClass("active");
+              $("#nav_es_ps_financial_assistance").addClass("active");
+              $("#nav_es_ps_financial_assistance_aics").addClass("active");
+              break;
+            default:
+              console.log("Page loaded: " + page);
+              break;
+          }
+        } else if (status === "error") {
+          console.error("Error loading page: " + xhr.status + " " + xhr.statusText);
+          $("#main-content-9999").html("<p class='text-danger'>Failed to load content.</p>");
+        }
+      });
+    }
+
+    loadPageXyyc2("/home"); 
+
+    // Navbar link click handler
+    $(document).on("click", ".nav-link-load-999, .nav-link-load-000", function (e) {
+      e.preventDefault();
+      var page = $(this).attr("href");
+      loadPageXyyc2(page);
+    });
+  });
+</script> */
