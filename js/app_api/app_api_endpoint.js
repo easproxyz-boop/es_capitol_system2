@@ -4,7 +4,7 @@ const APP_API_ENDPOINT = (() => {
         // Local development environment
         return 'http://localhost:3000';
     } else {
-        // Production environment
+        // Production environmentxxx
         return 'https://backend.whinxyz.online';
     }
 })();
